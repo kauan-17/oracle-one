@@ -1,0 +1,45 @@
+package br.com.alura.oneOrecle.modelo;
+
+import br.com.alura.oneOrecle.calculos.Classificar;
+
+public class Episodio implements Classificar {
+    private int numero;
+    private String nome;
+    private Serie serie;
+    private int totalVisualizacoes;
+
+    public int getTotalVisualizacoes() {
+        return totalVisualizacoes;
+    }
+
+    public void setTotalVisualizacoes(int totalVisualizacoes) {
+        this.totalVisualizacoes = totalVisualizacoes;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
+
+    @Override
+    public int getClassificacao() {
+        if(totalVisualizacoes> 100){
+            return 4;
+        }
+        else {
+            return 2;
+        }
+    }
+}
